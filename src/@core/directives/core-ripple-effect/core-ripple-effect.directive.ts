@@ -3,9 +3,10 @@ import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 import * as Waves from 'node-waves';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[rippleEffect]'
 })
-export class RippleEffectDirective {
+export class RippleEffectDirective implements OnInit {
   // Private
   private _nativeElement: any;
   @Input() wave: string;

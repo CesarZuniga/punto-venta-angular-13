@@ -3,6 +3,7 @@ import { Directive, ElementRef, Input, Inject, ChangeDetectorRef, OnChanges, Sim
 import * as Feather from 'feather-icons';
 
 @Directive({
+  // eslint-disable-next-line @angular-eslint/directive-selector
   selector: '[data-feather]'
 })
 export class FeatherIconDirective implements OnChanges {

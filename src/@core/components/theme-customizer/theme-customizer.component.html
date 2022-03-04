@@ -46,7 +46,7 @@
               />
               <label class="custom-control-label" for="skindark">Dark</label>
             </div>
-            <div class="custom-control custom-radio" *ngIf="coreConfig.layout.type == 'vertical'">
+            <div class="custom-control custom-radio" *ngIf="coreConfig.layout.type === 'vertical'">
               <input
                 type="radio"
                 id="skinsemidark"
@@ -106,7 +106,7 @@
           id="customizer-menu-collapsible"
           class="d-flex mt-2"
           formGroupName="menu"
-          *ngIf="coreConfig.layout.type == 'vertical'"
+          *ngIf="coreConfig.layout.type === 'vertical'"
         >
           <p class="font-weight-bold mr-auto m-0">Menu Collapsed</p>
           <div class="custom-control custom-control-primary custom-switch">
@@ -134,7 +134,7 @@
       <!-- Navbar -->
       <div id="customizer-navbar" class="px-2" formGroupName="navbar">
         <!-- Navbar Color -->
-        <div id="customizer-navbar-colors" *ngIf="coreConfig.layout.type == 'vertical'">
+        <div id="customizer-navbar-colors" *ngIf="coreConfig.layout.type === 'vertical'">
           <p class="font-weight-bold">Navbar Color</p>
           <ul class="list-inline unstyled-list">
             <li
@@ -183,7 +183,7 @@
         <div id="customizer-navbar-type">
           <p
             class="navbar-type-text font-weight-bold"
-            *ngIf="coreConfig.layout.type == 'vertical'; else navbarTypeHorizontal"
+            *ngIf="coreConfig.layout.type === 'vertical'; else navbarTypeHorizontal"
           >
             Navbar Type
           </p>
@@ -219,7 +219,7 @@
               />
               <label class="custom-control-label" for="nav-type-static">Static</label>
             </div>
-            <div class="custom-control custom-radio" *ngIf="coreConfig.layout.type == 'vertical'">
+            <div class="custom-control custom-radio" *ngIf="coreConfig.layout.type === 'vertical'">
               <input
                 type="radio"
                 id="nav-type-hidden"

@@ -1,13 +1,13 @@
-<div class="btn-group touchspin-wrapper" [ngClass]="{ 'touchspin-sm': size == 'sm', 'touchspin-lg': size == 'lg' }">
+<div class="btn-group touchspin-wrapper" [ngClass]="{ 'touchspin-sm': size === 'sm', 'touchspin-lg': size === 'lg' }">
   <button
     class="btn btn-sm btn-primary btn-touchspin btn-touchspin-down"
     (click)="decrement()"
     [disabled]="disabledValueDecrement"
     [ngClass]="{
-      'btn-info': color == 'info',
-      'btn-warning': color == 'warning',
-      'btn-success': color == 'success',
-      'btn-danger': color == 'danger'
+      'btn-info': color === 'info',
+      'btn-warning': color === 'warning',
+      'btn-success': color === 'success',
+      'btn-danger': color === 'danger'
     }"
   >
     <span *ngIf="!iconChevron" data-feather="minus"></span>
@@ -31,10 +31,10 @@
     (click)="increment()"
     [disabled]="disabledValueIncrement"
     [ngClass]="{
-      'btn-info': color == 'info',
-      'btn-warning': color == 'warning',
-      'btn-success': color == 'success',
-      'btn-danger': color == 'danger'
+      'btn-info': color === 'info',
+      'btn-warning': color === 'warning',
+      'btn-success': color === 'success',
+      'btn-danger': color === 'danger'
     }"
   >
     <span *ngIf="!iconChevron" data-feather="plus"></span>

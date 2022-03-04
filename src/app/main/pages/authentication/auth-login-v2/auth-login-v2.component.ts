@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { takeUntil } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { CoreConfigService } from '@core/services/config.service';
   styleUrls: ['./auth-login-v2.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AuthLoginV2Component implements OnInit {
+export class AuthLoginV2Component implements OnInit, OnDestroy {
   //  Public
   public coreConfig: any;
   public loginForm: FormGroup;

@@ -3,7 +3,7 @@
   <a
     class="d-flex align-items-center"
     [ngClass]="item.classes"
-    [ngClass]="item.type == 'section' ? 'dropdown-toggle nav-link' : 'dropdown-item dropdown-toggle'"
+    [ngClass]="item.type === 'section' ? 'dropdown-toggle nav-link' : 'dropdown-item dropdown-toggle'"
     *ngIf="!item.url"
   >
     <ng-container *ngTemplateOutlet="itemContent"></ng-container>
@@ -21,7 +21,7 @@
       <!-- item -->
       <li
         core-menu-horizontal-item
-        *ngIf="item.type == 'item'"
+        *ngIf="item.type === 'item'"
         [item]="item"
         [ngClass]="{ disabled: item.disabled === true }"
         [routerLinkActive]="!item.openInNewTab ? 'active' : ''"
@@ -32,7 +32,7 @@
       <!-- collapsible -->
       <li
         core-menu-horizontal-collapsible
-        *ngIf="item.type == 'collapsible'"
+        *ngIf="item.type === 'collapsible'"
         [item]="item"
         class="dropdown dropdown-submenu"
       ></li>

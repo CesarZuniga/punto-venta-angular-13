@@ -45,3 +45,4 @@ Thumbs.db
 *.angulardoc.json
 /.angular
 package-lock.json
+/src/coverage/

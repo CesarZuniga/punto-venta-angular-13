@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, HostListener } from '@angular/core';
+import { Component, Inject, HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './scroll-top.component.html',
   styleUrls: ['./scroll-top.component.scss']
 })
-export class ScrollTopComponent implements OnInit {
+export class ScrollTopComponent {
   windowScrolled: boolean;
   topOffset: number = 150; // Top offset to display scroll to top button
 
@@ -39,6 +39,4 @@ export class ScrollTopComponent implements OnInit {
       }
     })();
   }
-
-  ngOnInit() {}
 }

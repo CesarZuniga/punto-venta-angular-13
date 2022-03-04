@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 // ContentHeader component interface
 export interface ContentHeader {
@@ -18,11 +18,10 @@ export interface ContentHeader {
   selector: 'app-content-header',
   templateUrl: './content-header.component.html'
 })
-export class ContentHeaderComponent implements OnInit {
+export class ContentHeaderComponent   {
   // input variable
   @Input() contentHeader: ContentHeader;
 
   constructor() {}
 
-  ngOnInit() {}
 }

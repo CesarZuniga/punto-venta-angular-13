@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: 'authentication/login-v2',
     component: AuthLoginV2Component,
-    data: { animation: 'auth' }
+    data: { animation: 'auth' },
   }
 ];
 

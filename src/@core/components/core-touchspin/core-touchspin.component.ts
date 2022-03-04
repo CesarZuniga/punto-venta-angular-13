@@ -16,6 +16,7 @@ export class CoreTouchspinComponent implements OnInit {
   @Input('maxValue') maxValue: number = 9999;
   @Input('minValue') minValue: number = 0;
 
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onChange = new EventEmitter<number>();
 
   public disabledValueIncrement = false;
@@ -24,12 +25,12 @@ export class CoreTouchspinComponent implements OnInit {
   constructor() {}
 
   inputChange(inputValue: number) {
-    if (inputValue == this.maxValue || inputValue > this.maxValue) {
+    if (inputValue === this.maxValue || inputValue > this.maxValue) {
       this.disabledValueIncrement = true;
     } else {
       this.disabledValueIncrement = false;
     }
-    if (inputValue == this.minValue || inputValue < this.minValue) {
+    if (inputValue === this.minValue || inputValue < this.minValue) {
       this.disabledValueDecrement = true;
     } else {
       this.disabledValueDecrement = false;
@@ -39,7 +40,7 @@ export class CoreTouchspinComponent implements OnInit {
   }
 
   increment() {
-    if (this.stepValue == undefined) {
+    if (this.stepValue === undefined) {
       this.numberValue += 1;
     } else {
       this.numberValue += this.stepValue;
@@ -47,8 +48,8 @@ export class CoreTouchspinComponent implements OnInit {
 
     this.emitChange(this.numberValue);
 
-    if (!(this.minValue == undefined || this.maxValue == undefined)) {
-      if (this.numberValue == this.maxValue || this.numberValue > this.maxValue) {
+    if (!(this.minValue === undefined || this.maxValue === undefined)) {
+      if (this.numberValue === this.maxValue || this.numberValue > this.maxValue) {
         this.disabledValueIncrement = true;
       } else {
         this.disabledValueIncrement = false;
@@ -62,7 +63,7 @@ export class CoreTouchspinComponent implements OnInit {
   }
 
   decrement() {
-    if (this.stepValue == undefined) {
+    if (this.stepValue === undefined) {
       this.numberValue -= 1;
     } else {
       this.numberValue -= this.stepValue;
@@ -70,8 +71,8 @@ export class CoreTouchspinComponent implements OnInit {
 
     this.emitChange(this.numberValue);
 
-    if (!(this.minValue == undefined || this.maxValue == undefined)) {
-      if (this.numberValue == this.minValue || this.numberValue < this.minValue) {
+    if (!(this.minValue === undefined || this.maxValue === undefined)) {
+      if (this.numberValue === this.minValue || this.numberValue < this.minValue) {
         this.disabledValueDecrement = true;
       } else {
         this.disabledValueDecrement = false;

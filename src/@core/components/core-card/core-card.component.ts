@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, HostListener, EventEmitter, Output, OnChanges } from '@angular/core';
 
 import { BlockUIService } from 'ng-block-ui';
 
@@ -8,7 +8,7 @@ import { CoreBlockUiComponent } from '@core/components/core-card/core-block-ui/c
   selector: 'core-card',
   templateUrl: './core-card.component.html'
 })
-export class CoreCardComponent implements OnInit {
+export class CoreCardComponent implements OnInit, OnChanges {
   // public
   // Generate random string  assign to specific core-card to only block that specific card
   public coreCardId: string = Math.random().toString(36).substring(2);

@@ -2,15 +2,15 @@
 <ng-container *ngIf="layout === 'vertical'">
   <ng-container *ngFor="let item of menu">
     <!-- section -->
-    <li core-menu-vertical-section *ngIf="item.type == 'section'" [item]="item" class="navigation-header"></li>
+    <li core-menu-vertical-section *ngIf="item.type === 'section'" [item]="item" class="navigation-header"></li>
 
     <!-- sub-menu item/collapsible of sections  -->
-    <ng-container *ngIf="item.type == 'section'">
+    <ng-container *ngIf="item.type === 'section'">
       <ng-container *ngFor="let item of item.children">
         <!-- item | if openInNewTab set routerLink & routerLinkActive blank -->
         <li
           core-menu-vertical-item
-          *ngIf="item.type == 'item'"
+          *ngIf="item.type === 'item'"
           [item]="item"
           [ngClass]="{ disabled: item.disabled === true }"
           [routerLinkActive]="!item.openInNewTab ? 'active' : ''"
@@ -21,7 +21,7 @@
         <!-- collapsible -->
         <li
           core-menu-vertical-collapsible
-          *ngIf="item.type == 'collapsible'"
+          *ngIf="item.type === 'collapsible'"
           [item]="item"
           class="nav-item has-sub"
         ></li>
@@ -31,7 +31,7 @@
     <!-- item -->
     <li
       core-menu-vertical-item
-      *ngIf="item.type == 'item'"
+      *ngIf="item.type === 'item'"
       [item]="item"
       [ngClass]="{ disabled: item.disabled === true }"
       [routerLinkActive]="!item.openInNewTab ? 'active' : ''"
@@ -40,7 +40,7 @@
       <span [routerLink]="item.openInNewTab ? [] : [item.url]" class="d-none"></span>
     </li>
     <!-- collapsible -->
-    <li core-menu-vertical-collapsible *ngIf="item.type == 'collapsible'" [item]="item" class="nav-item has-sub"></li>
+    <li core-menu-vertical-collapsible *ngIf="item.type === 'collapsible'" [item]="item" class="nav-item has-sub"></li>
   </ng-container>
 </ng-container>
 <!--/ Vertical Menu -->
@@ -49,12 +49,12 @@
 <ng-container *ngIf="layout === 'horizontal'">
   <ng-container *ngFor="let item of menu">
     <!-- section -->
-    <li core-menu-horizontal-collapsible *ngIf="item.type == 'section'" [item]="item" class="dropdown nav-item"></li>
+    <li core-menu-horizontal-collapsible *ngIf="item.type === 'section'" [item]="item" class="dropdown nav-item"></li>
 
     <!-- item | if openInNewTab set routerLink & routerLinkActive blank -->
     <li
       core-menu-horizontal-item
-      *ngIf="item.type == 'item'"
+      *ngIf="item.type === 'item'"
       [item]="item"
       [ngClass]="{ disabled: item.disabled === true }"
       [routerLinkActive]="!item.openInNewTab ? 'active' : ''"
@@ -66,7 +66,7 @@
     <!-- collapsible -->
     <li
       core-menu-horizontal-collapsible
-      *ngIf="item.type == 'collapsible'"
+      *ngIf="item.type === 'collapsible'"
       [item]="item"
       class="dropdown dropdown-submenu"
     ></li>
